@@ -12,7 +12,7 @@ const CocktailList = ({ text }) => {
     if (error) console.log(error);
 
     return (
-        <div style={{ display: "inline-block" }}>
+        <div className="cocktails">
             {data ? (
                 data.drinks ? (
                     data.drinks.map((elm) => (
