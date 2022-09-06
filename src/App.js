@@ -1,9 +1,20 @@
+import { useState } from "react";
+import CocktailList from "./components/CocktailList";
+import SearchForm from "./components/SearchForm";
+
 function App() {
-  return (
-    <div >
-      <h1>test</h1>
-    </div>
-  );
+    const [text, setText] = useState("");
+
+    const onFormChange = (e) => {
+        setText(e.target.value);
+    };
+
+    return (
+        <div>
+            <SearchForm text={text} onChange={onFormChange} />
+            <CocktailList text={text} />
+        </div>
+    );
 }
 
 export default App;
