@@ -12,23 +12,26 @@ const CocktailList = ({ text }) => {
     if (error) console.log(error);
 
     return (
-        <div className="cocktails">
+        <>
             {data ? (
                 data.drinks ? (
-                    data.drinks.map((elm) => (
-                        <Cocktail
-                            name={elm.strDrink}
-                            id={elm.idDrink}
-                            img={elm.strDrinkThumb}
-                        />
-                    ))
+                    <div className="cocktails">
+                        {data.drinks.map((elm) => (
+                            <Cocktail
+                                name={elm.strDrink}
+                                img={elm.strDrinkThumb}
+                                key={elm.idDrink}
+                                id={elm.idDrink}
+                            />
+                        ))}
+                    </div>
                 ) : (
                     <h1>No Drinks Matched Your Search.</h1>
                 )
             ) : (
                 <h1>Can Not Fetch Data.</h1>
             )}
-        </div>
+        </>
     );
 };
 
