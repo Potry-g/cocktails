@@ -1,3 +1,4 @@
+import React from "react";
 import { Link, useParams } from "react-router-dom";
 import useAxios from "../hooks/useAxios";
 
@@ -42,9 +43,9 @@ const CocktailPage = () => {
                             <h1>{data.drinks[0].strDrink}</h1>
                             <h3>{data.drinks[0].strInstructions}</h3>
                             <ul className="ing-list">
-                                {searchIngredients(data.drinks[0]).map(
-                                    (elm) => (
-                                        <li>{elm}</li>
+                                {React.Children.toArray(
+                                    searchIngredients(data.drinks[0]).map(
+                                        (elm) => <li>{elm}</li>
                                     )
                                 )}
                             </ul>
