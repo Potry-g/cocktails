@@ -80,9 +80,11 @@ code {
 
 .ing-list{
   float: left;
+  padding-right: 50px;
 }
 
 .return-btn{
+  float: left;
   display: inline-block;
   outline: 0;
   cursor: pointer;

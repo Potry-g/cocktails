@@ -17,7 +17,7 @@ const CocktailPage = () => {
         let ing = [];
         for (let key in elm) {
             if (key === check) {
-                if (elm[key] === null) break;
+                if (elm[key] === null || num > 15) break;
                 else {
                     ing.push(elm[key]);
                     check = "strIngredient".concat(num);
